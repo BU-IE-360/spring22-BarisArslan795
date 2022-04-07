@@ -1,5 +1,4 @@
-## Welcome to My Progress Journal for IE360 Spring2022
-## Barış Arslan 2019402129
+## Barış Arslan Progress Journal
 
 
 ### Homework 1
