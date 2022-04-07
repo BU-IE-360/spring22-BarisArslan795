@@ -1,0 +1,208 @@
+---
+title: "IE360: Homework 1"
+author: "Baris Arslan 2019402129"
+date: "4/6/2022"
+output: html_document
+---
+
+# Required Packages
+```{r message=FALSE, warning=FALSE}
+library(readxl)
+library(ggplot2)
+library(corrplot)
+library(zoo)
+library(lubridate)
+```
+
+# 1) Introduction
+
+In the Homework 1 of IE360: Statistical Forecasting and Time Series course, four different data sets are obtained with respect the to the area of interest.\
+Data sets are as follows:
+
+  + Debit Card and Credit Card Total Expenditure Amount on Car Rental over 2014-2022
+  + Weighted Average Interest Rates For Banks Loans (Vehicle) over 2014-2022
+  + Total Number of Tourist in Turkey over 2014-2022
+  + Google Trends Search Results for the keyword "Araba kiralama" over 2014-2022 
+  
+First 3 data sets are obtained from Electronic Data Delivery System: https://evds2.tcmb.gov.tr/ \
+Last data set is obtained from Google Trends: https://trends.google.com/trends/ \
+  
+
+In this homework, the area of interest and research question is:\
+**Is the total expenditure amount on car rental in Turkey correlated with the interest rates for vehicle loans and the total number of tourist in Turkey?**
+
+
+
+# 2) Debit Card and Credit Card Total Expenditure Amount on Car Rental over 2014-2022
+
+In this section, "Debit Card and Credit Card Total Expenditure Amount on Car Rental" data is analyzed.
+Total expenditure amounts are reported monthly in Thousand TRY units.
+Time range for the data is from March 2014 to January 2022.
+
+## 2.1) Dataset
+```{r}
+ExpendCarRental <- read_excel("Data/Debit_Credit_Expenditure_Car_Rental.xlsx")
+ExpendCarRental$Date <- as.yearmon(ExpendCarRental$Date)
+head(ExpendCarRental)
+tail(ExpendCarRental)
+summary(ExpendCarRental$Amount)
+str(ExpendCarRental)
+```
+
+## 2.2) Plot of the Data
+```{r}
+ggplot(ExpendCarRental, aes(Date, Amount)) +
+  geom_line(data = ExpendCarRental, color="red", linetype = "solid") +
+   ggtitle("Debit Card and Credit Card Total Expenditure Amount on Car Rental") +
+    xlab("Date (Monthly)") + ylab("Total Expenditure (Thousand TRY)") +
+    theme_linedraw()
+```
+
+## 2.3) Yearly Boxplot of the Data
+```{r}
+ggplot(ExpendCarRental, aes(x=factor(year(Date)),y=Amount)) + 
+  geom_boxplot(aes(fill=factor(year(Date)))) + 
+  xlab("Years") + ylab("Total Expenditure (Thousand TRY)") + 
+  ggtitle("Debit Card and Credit Card Total Expenditure Amount on Car Rental") +
+  theme_linedraw() + theme(legend.position = "none")
+```
+
+
+# 3) Weighted Average Interest Rates For Banks Loans (Vehicle) over 2014-2022
+
+In this section, "Weighted Average Interest Rates For Banks Loans (Vehicle)" data is analyzed.
+Weighted average interest rates are reported monthly in percentages(%).
+Time range for the data is from March 2014 to January 2022.
+
+## 3.1) Dataset
+```{r}
+
+InterestRateVehicles <- read_excel("Data/Interest_Rate_Vehicles.xlsx")
+InterestRateVehicles$Date <- as.yearmon(InterestRateVehicles$Date)
+head(InterestRateVehicles)
+tail(InterestRateVehicles)
+summary(InterestRateVehicles$Rates)
+str(InterestRateVehicles)
+
+```
+
+## 3.2) Plot of the Data
+```{r}
+
+ggplot(InterestRateVehicles, aes(Date, Rates)) +
+  geom_line(data = InterestRateVehicles, color="blue", linetype = "solid") +
+   ggtitle("Weighted Average Interest Rates for Banks Loans (Vehicle)") +
+    xlab("Date (Monthly)") + ylab("Interest Rates (%)") +
+    theme_linedraw()
+
+```
+
+## 3.3) Yearly Boxplot of the Data
+```{r}
+ggplot(InterestRateVehicles, aes(x=factor(year(Date)),y=Rates)) + 
+  geom_boxplot(aes(fill=factor(year(Date)))) + 
+  xlab("Years") + ylab("Interest Rates (%)") + 
+  ggtitle("Weighted Average Interest Rates for Banks Loans (Vehicle)") +
+  theme_linedraw() + theme(legend.position = "none")
+```
+
+# 4) Total Number of Tourist in Turkey over 2014-2022
+
+In this section, "Total Number of Tourists in Turkey" data is analyzed.
+Total number of tourists data is reported monthly.
+Time range for the data is from March 2014 to January 2022.
+
+## 4.1) Dataset
+```{r}
+
+TotalTourists <- read_excel("Data/Total_Tourists.xlsx")
+TotalTourists$Date <- as.yearmon(TotalTourists$Date)
+head(TotalTourists)
+tail(TotalTourists)
+summary(TotalTourists$Tourists)
+str(TotalTourists)
+
+```
+
+## 4.2) Plot of the Data
+```{r}
+
+ggplot(TotalTourists, aes(Date, Tourists)) +
+  geom_line(data = TotalTourists, color="orange", linetype = "solid") +
+   ggtitle("Total Number of Tourist in Turkey") +
+    xlab("Date (Monthly)") + ylab("Total Number of Tourists") +
+    theme_linedraw()
+
+```
+
+## 4.3) Yearly Boxplot of the Data
+```{r}
+ggplot(TotalTourists, aes(x=factor(year(Date)),y=Tourists)) + 
+  geom_boxplot(aes(fill=factor(year(Date)))) + 
+  xlab("Years") + ylab("Total Number of Tourists") + 
+  ggtitle("Total Number of Tourist in Turkey") +
+  theme_linedraw() + theme(legend.position = "none")
+```
+
+
+# 5) Google Trends Search Results for the keyword "Araba kiralama" over 2014-2022
+
+In this section, Google Trends search results for the keyword "Araba kiralama" is analyzed.
+Search results for "Araba kiralama" keyword are reported monthly.
+Time range for the data is from March 2014 to January 2022.
+
+## 5.1) Dataset
+```{r}
+
+GoogleTrends <- read.csv("Data/GoogleTrends.csv")
+GoogleTrends$Month <- as.yearmon(GoogleTrends$Month)
+head(GoogleTrends)
+tail(GoogleTrends)
+summary(GoogleTrends$Keyword)
+str(GoogleTrends$Keyword)
+
+```
+
+## 5.2) Plot of the Data
+```{r}
+
+ggplot(GoogleTrends, aes(Month, Keyword)) +
+  geom_line(data = GoogleTrends, color="purple", linetype = "solid") +
+   ggtitle("Google Trend Results for Keyword: Araba kiralama") +
+    xlab("Date") + ylab("Number of Searches") +
+    theme_linedraw()
+
+```
+
+## 5.3) Yearly Boxplot of the Data
+```{r}
+ggplot(GoogleTrends, aes(x=factor(year(Month)),y=Keyword)) + 
+  geom_boxplot(aes(fill=factor(year(Month)))) + 
+  xlab("Years") + ylab("Number of Searches") + 
+  ggtitle("Google Trend Results for Keyword: Araba kiralama") +
+  theme_linedraw() + theme(legend.position = "none")
+```
+
+
+
+# 6) Conclusion
+  
+|   In the first section, "Debit Card and Credit Card Total Expenditure Amount on Car Rental" data follows a generally increasing trend. However there is a serious decrease in the first quarter of the year 2020. It can be explained by the globally affecting COVID-19 pandemic. In addition to the affects of the pandemic, there is a rapid increase after the 2021. Main reason for this behavior is the increase in the inflation rate for Turkish Lira (TRY).  
+|   In the third section, "Total Number of Tourists in Turkey" data has a seasonality factor. Total number of tourists increase around summers and then decreases around winters. However, there is also a major decrease after 2020 because of the COVID-19 pandemic. There are some levels of similarities with Google Trends results.  
+|   In the last section, "Google Trend Results for Keyword: Araba kiralama" data is plotted. There can be seen a similar seasonality with the "Total Number of Tourists in Turkey" data. "Araba kiralama" searches increase around summers and then decreases on winters similar to previous section. However, there is an increase after 2020 in contrast with the previous section. It can be explained with the increasing trend in the "Debit Card and Credit Card Total Expenditure Amount on Car Rental" and inflation rate in Turkey after 2020.  
+|   In conclusion, the correlation between total expenditure on car rental, interest rates for vehicle, and total number of tourists are examined in this homework. According to the results of the correlation matrix and behavior of the data, there is not a strong correlation between the data sets.
+|   Even though a strong correlation is not observed, there are moderate level correlations between some data sets:
+
++ Between "Debit Card and Credit Card Total Expenditure Amount on Car Rental" data and "Weighted Average Interest Rates for Banks Loans (Vehicle)" data, there is a moderate level correlation.  
++ Between "Debit Card and Credit Card Total Expenditure Amount on Car Rental" data and "Google Trend Results for Keyword: Araba kiralama" data, there is a moderate level correlation.  
++ Between "Total Number of Tourists in Turkey" data and "Google Trend Results for Keyword: Araba kiralama" data, there is a moderate level correlation. 
+  
+
+## 6.1) Correlation Matrix
+```{r}
+
+data <- data.frame(ExpendCarRental$Amount,  InterestRateVehicles$Rates, TotalTourists$Tourists, GoogleTrends$Keyword)
+names(data) <- c("Expenditure on Car Rental", "Interest Rates on Vehicle", "Total Number of Tourists" , "Google Trends: Araba kiralama")
+data_cor = cor(data)
+corrplot(data_cor, method="number")
+```
