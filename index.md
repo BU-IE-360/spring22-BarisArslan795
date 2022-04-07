@@ -8,8 +8,6 @@
 
 [Here](HW1/HW1_Baris_Arslan.Rmd) is the RMarkdown (RMD) file for Homework 1
 
-[Here](HW1/Data) is the data file for Homework 1
-
 
 ### Homework 2
 
