@@ -1,4 +1,4 @@
-## Welcome to Barış Arslan's GitHub Page
+## Welcome to My Progress Journal for IE360 Spring2022
 ## Barış Arslan 2019402129
 
 
