@@ -187,14 +187,14 @@ ggplot(GoogleTrends, aes(x=factor(year(Month)),y=Keyword)) +
 
 # 6) Conclusion
   
-|   In the first section, "Debit Card and Credit Card Total Expenditure Amount on Car Rental" data follows a generally increasing trend. However there is a serious decrease in the first quarter of the year 2020. It can be explained by the globally affecting COVID-19 pandemic. In addition to the affects of the pandemic, there is a rapid increase after the 2021. Main reason for this behavior is the increase in the inflation rate for Turkish Lira (TRY).\
-|   In the third section, "Total Number of Tourists in Turkey" data has a seasonality factor. Total number of tourists increase around summers and then decreases around winters. However, there is also a major decrease after 2020 because of the COVID-19 pandemic. There are some levels of similarities with Google Trends results.\
+|   In the first section, "Debit Card and Credit Card Total Expenditure Amount on Car Rental" data follows a generally increasing trend. However there is a serious decrease in the first quarter of the year 2020. It can be explained by the globally affecting COVID-19 pandemic. In addition to the affects of the pandemic, there is a rapid increase after the 2021. Main reason for this behavior is the increase in the inflation rate for Turkish Lira (TRY). \
+|   In the third section, "Total Number of Tourists in Turkey" data has a seasonality factor. Total number of tourists increase around summers and then decreases around winters. However, there is also a major decrease after 2020 because of the COVID-19 pandemic. There are some levels of similarities with Google Trends results. \
 |   In the last section, "Google Trend Results for Keyword: Araba kiralama" data is plotted. There can be seen a similar seasonality with the "Total Number of Tourists in Turkey" data. "Araba kiralama" searches increase around summers and then decreases on winters similar to previous section. However, there is an increase after 2020 in contrast with the previous section. It can be explained with the increasing trend in the "Debit Card and Credit Card Total Expenditure Amount on Car Rental" and inflation rate in Turkey after 2020.
-|   In conclusion, the correlation between total expenditure on car rental, interest rates for vehicle, and total number of tourists are examined in this homework. According to the results of the correlation matrix and behavior of the data, there is not a strong correlation between the data sets. Even though a strong correlation is not observed, there are moderate level correlations between some data sets:\
+|   In conclusion, the correlation between total expenditure on car rental, interest rates for vehicle, and total number of tourists are examined in this homework. According to the results of the correlation matrix and behavior of the data, there is not a strong correlation between the data sets. Even though a strong correlation is not observed, there are moderate level correlations between some data sets: \
   
-  + Between "Debit Card and Credit Card Total Expenditure Amount on Car Rental" data and "Weighted Average Interest Rates for Banks Loans (Vehicle)" data, there is a moderate level correlation.\
-  + Between "Debit Card and Credit Card Total Expenditure Amount on Car Rental" data and "Google Trend Results for Keyword: Araba kiralama" data, there is a moderate level correlation.\
-  + Between "Total Number of Tourists in Turkey" data and "Google Trend Results for Keyword: Araba kiralama" data, there is a moderate level correlation.\
+  + Between "Debit Card and Credit Card Total Expenditure Amount on Car Rental" data and "Weighted Average Interest Rates for Banks Loans (Vehicle)" data, there is a moderate level correlation. \
+  + Between "Debit Card and Credit Card Total Expenditure Amount on Car Rental" data and "Google Trend Results for Keyword: Araba kiralama" data, there is a moderate level correlation. \
+  + Between "Total Number of Tourists in Turkey" data and "Google Trend Results for Keyword: Araba kiralama" data, there is a moderate level correlation. \
 
 ## 6.1) Correlation Matrix
 ```{r}
