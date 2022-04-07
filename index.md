@@ -2,9 +2,10 @@
 
 
 ### Homework 1
-[Homework 1 Description](HW1/HW1_Baris_Arslan.html)
+[Homework 1 Description](HW1/IE360_Spring22_HW1.pdf)
 
-[Here](https://bu-ie-360.github.io/spring22-BarisArslan/files/HW1/HW1_Baris_Arslan.html) is the HTML file for Homework 1
+[Here](https://bu-ie-360.github.io/spring22-BarisArslan/HW1/HW1_Baris_Arslan.html) is the HTML file for Homework 1
+
 
 [Here](HW1/HW1_Baris_Arslan.Rmd) is the R Script for Homework 1
 
