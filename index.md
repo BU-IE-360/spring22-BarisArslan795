@@ -3,13 +3,13 @@
 
 ### Homework 1
 
-[Here] is the HTML file for Homework 1
+[Here](HW1/HW1_Baris_Arslan.html) is the HTML file for Homework 1
 
-[Here] is the R Script for Homework 1
+[Here](HW1/HW1_Baris_Arslan.Rmd) is the R Script for Homework 1
 
 
 ### Homework 2
 
 ### Homework 3
 
-[link](https://moodle.boun.edu.tr/login/)
+[Moodle Page](https://moodle.boun.edu.tr/login/)
