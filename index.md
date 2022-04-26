@@ -10,6 +10,8 @@
 
 
 ### Homework 2
+[Homework 2 Description](HW2/IE360_Spring22_HW2.pdf)
+
 
 ### Homework 3
 
