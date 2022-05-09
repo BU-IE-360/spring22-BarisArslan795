@@ -174,8 +174,7 @@ ggplot(forecast) +
   geom_line(aes(x=data.Quarter, y=data.Prediction_UGS,color="Forecasted"),size=1)+
   labs(x="Quarters",
        y="Sales",
-       title="Actual and Forecasted Values of UGS",
-       color="Consumption")+
+       title="Actual and Forecasted Values of UGS")+
   theme_linedraw()
 
 ```
