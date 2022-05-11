@@ -291,6 +291,39 @@ library(lubridate)</code></pre>
 <div id="alternative-model-ii" class="section level2">
 <h2>4.2. Alternative Model II</h2>
 <p>In this alternative model, trend and seasonality factors are added to the model. Those factors are defined and added to the data as “trend”, “season2”, “season3” and “season4” columns.</p>
+<pre><code>##    data...1. trend season2 season3 season4
+## 1    2000 Q1     1       0       0       0
+## 2    2000 Q2     2       1       0       0
+## 3    2000 Q3     3       0       1       0
+## 4    2000 Q4     4       0       0       1
+## 5    2001 Q1     5       0       0       0
+## 6    2001 Q2     6       1       0       0
+## 7    2001 Q3     7       0       1       0
+## 8    2001 Q4     8       0       0       1
+## 9    2002 Q1     9       0       0       0
+## 10   2002 Q2    10       1       0       0
+## 11   2002 Q3    11       0       1       0
+## 12   2002 Q4    12       0       0       1
+## 13   2003 Q1    13       0       0       0
+## 14   2003 Q2    14       1       0       0
+## 15   2003 Q3    15       0       1       0
+## 16   2003 Q4    16       0       0       1
+## 17   2004 Q1    17       0       0       0
+## 18   2004 Q2    18       1       0       0
+## 19   2004 Q3    19       0       1       0
+## 20   2004 Q4    20       0       0       1
+## 21   2005 Q1    21       0       0       0
+## 22   2005 Q2    22       1       0       0
+## 23   2005 Q3    23       0       1       0
+## 24   2005 Q4    24       0       0       1
+## 25   2006 Q1    25       0       0       0
+## 26   2006 Q2    26       1       0       0
+## 27   2006 Q3    27       0       1       0
+## 28   2006 Q4    28       0       0       1
+## 29   2007 Q1    29       0       0       0
+## 30   2007 Q2    30       1       0       0
+## 31   2007 Q3    31       0       1       0
+## 32   2007 Q4    32       0       0       1</code></pre>
 <pre><code>## 
 ## Call:
 ## lm(formula = UGS ~ NLPG + NUGV + GNPA + trend + season2 + season3 + 

@@ -124,6 +124,7 @@ In this alternative model, trend and seasonality factors are added to the model.
 Those factors are defined and added to the data as "trend", "season2", "season3" and "season4" columns.
 
 ```{r echo=FALSE, message=FALSE, warning=FALSE}
+data.frame(data[,1],data[,12:15])
 fit2<-lm(formula = UGS~NLPG+NUGV+GNPA+trend+season2+season3+season4, data=data[1:28,])
 summary(fit2)
 plot(fit2)
