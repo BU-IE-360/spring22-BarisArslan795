@@ -17,5 +17,14 @@
 [Here](HW2/HW2_Baris_Arslan.Rmd) is the RMarkdown (RMD) file for Homework 2
 
 
+### Project
+[Project Description](PROJECT - Solar Power Forecasting/Project Description.pdf)
+
+[Here](https://bu-ie-360.github.io/spring22-BarisArslan/PROJECT - Solar Power Forecasting/Project_Baris_Arslan.html) is the HTML file for Project
+
+[Here](PROJECT - Solar Power Forecasting/Project_Baris_Arslan.Rmd) is the RMarkdown (RMD) file for Project
+
+
+
 ### Moodle Page
 [Moodle Page](https://moodle.boun.edu.tr/login/)
