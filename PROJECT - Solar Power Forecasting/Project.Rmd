@@ -210,7 +210,7 @@ When all techniques that are applied during the process are taken into considera
 
 
 ## Additional Notes
-My RMarkdown file is located at the progress journal. [Click here](https://bu-ie-360.github.io/spring22-BarisArslan/Project/Project_Baris_Arslan.Rmd)
+My RMarkdown file is located at the progress journal. [Click here](https://bu-ie-360.github.io/spring22-BarisArslan/PROJECT - Solar Power Forecasting/Project.Rmd)
 
 
 
